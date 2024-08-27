@@ -19,8 +19,8 @@ This project is a Streamlit-based application that processes invoices (in PDF fo
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/invoice-processing-bounding-boxes.git
-   cd invoice-processing-bounding-boxes
+   git clone https://github.com/Somilya24/WNSProjects.git
+   cd Invoice_Bounding_Box
 
 2. **Install Required Packages:**
 Install the required Python libraries using pip:
@@ -31,7 +31,7 @@ Install the required Python libraries using pip:
 Execute the script using Streamlit:
 
    ```bash
-   streamlit run main.py
+   streamlit run InvoiceOCR2.py
 ## Usage
 1. **Upload an Invoice:**
 
