@@ -22,8 +22,8 @@ This project is a Python-based application that uses the YOLOv5 model for real-t
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/traffic-monitoring-plate-recognition.git
-   cd traffic-monitoring-plate-recognition
+   git clone https://github.com/Somilya24/WNSProjects.git
+   cd Intelligent_Traffic_Monitoring_System
 2. **Install Required Packages:**
 Install the required Python libraries using pip:
 
@@ -39,7 +39,7 @@ Ensure you have the `coco.names` file in your project directory, which contains 
 Execute the script using Python:
 
     ```bash
-    python main.py
+    python Traffic_Management_System.py
 
 ## Usage
 1. **Process Video Feed:**
