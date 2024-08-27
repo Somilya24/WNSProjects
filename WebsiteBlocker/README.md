@@ -20,8 +20,8 @@ This project is a Python-based tool designed to help users block or unblock webs
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/website-blocker-scraper.git
-   cd website-blocker-scraper
+   git clone https://github.com/Somilya24/WNSProjects.git
+   cd WebsiteBlocker
    
 2. **Install Required Packages:**
 Install the required Python libraries using pip:
@@ -31,7 +31,7 @@ Install the required Python libraries using pip:
 3. **Run the Application:**
    Execute the script using Python:
    ```bash
-   python main.py
+   python WebsiteBlocker.py
 
 ## Usage
 1. **Blocking or Unblocking Websites:**
