@@ -42,14 +42,15 @@ Install the required Python libraries using pip:
    
 2. **Pattern Recognition:**
 
+
     After blocking/unblocking, the application allows you to enter a regex pattern to match URLs from the given websites. If you skip this step, the program will end.
 ## Example Screenshots
 1. Blocking Websites:
 This screenshot shows the application blocking websites by modifying the hosts file.
-<img height="400" src="C:\Users\anand\Pictures\Screenshots\Screenshot (518).png" width="600"/>
+![Screenshot (518)](https://github.com/user-attachments/assets/57bbcac6-8d5e-46a8-923d-ca413a9a9a14)
 2. Unblocking Websites:
 This screenshot demonstrates unblocking websites, removing entries from the hosts file.
-<img height="400" src="C:\Users\anand\Pictures\Screenshots\Screenshot (519).png" width="600"/>
+![Screenshot (519)](https://github.com/user-attachments/assets/8027ef55-8b49-4226-851b-16e715fa5572)
 ## Important Notes
 1. **Permissions:** Ensure you have the necessary administrative or root permissions to modify the hosts file.
 
