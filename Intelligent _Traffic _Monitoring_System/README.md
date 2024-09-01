@@ -49,6 +49,57 @@ The application will detect objects every `skip_frames` frames and display the v
 2. **Customize Classes:**
 You can add or modify the object classes for which you want to enable license plate recognition by editing the `label` check in the `draw_labels` function.
 
+## Code Overview
+
+### 1. Imports
+
+- **`cv2`**: OpenCV library for video capture and image processing.
+- **`torch`**: PyTorch library for deep learning, used to load the YOLOv5 model.
+- **`numpy`**: Library for numerical operations and handling arrays.
+- **`easyocr`**: Library for Optical Character Recognition (OCR), used to read text from detected objects (e.g., license plates).
+
+### 2. Model and Device Initialization
+
+- **`device`**: Determines if GPU (`cuda`) or CPU should be used for model inference.
+- **`model`**: Loads the YOLOv5 model from PyTorch Hub and moves it to the selected device.
+- **`reader`**: Initializes EasyOCR for English (`en`) to perform OCR on detected objects.
+
+### 3. Loading Classes
+
+- **`classes`**: Loads class names from the `coco.names` file, allowing the application to map detected object IDs to labels.
+
+### 4. Functions
+
+- **`detect_objects(frame)`**:
+  - **Purpose**: Detects objects in a video frame using YOLOv5.
+  - **Parameters**: `frame` - The current video frame.
+  - **Operation**:
+    - Performs detection on the frame.
+    - Extracts and returns bounding boxes, confidence scores, and class IDs.
+
+- **`draw_labels(boxes, confidences, class_ids, frame)`**:
+  - **Purpose**: Draws bounding boxes and labels on detected objects.
+  - **Parameters**: `boxes`, `confidences`, `class_ids`, `frame`.
+  - **Operation**:
+    - Draws bounding boxes and labels for each detected object.
+    - If the object is a vehicle, extracts the region and runs OCR to identify text (e.g., license plates).
+    - Returns the frame with drawn labels and OCR results.
+
+### 5. Video Processing
+
+- **`cap`**: Captures video from a file or webcam using OpenCV.
+- **Frame Processing Loop**:
+  - Reads and resizes frames for faster processing.
+  - Detects objects every few frames.
+  - Draws labels and OCR results.
+  - Displays the processed frame.
+  - Exits on 'q' key press.
+
+### 6. Cleanup
+
+- Releases the video capture object and closes all OpenCV windows upon application exit.
+
+
 ## Example Screenshots
 1. Object Detection and License Plate Recognition
 This screenshot shows the application detecting vehicles and license plate in a traffic video and drawing bounding boxes around them.
