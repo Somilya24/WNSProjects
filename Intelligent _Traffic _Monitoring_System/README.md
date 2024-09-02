@@ -50,7 +50,7 @@ The application will detect objects every `skip_frames` frames and display the v
 You can add or modify the object classes for which you want to enable license plate recognition by editing the `label` check in the `draw_labels` function.
 
 ## Code Overview
-
+![Screenshot (533)](https://github.com/user-attachments/assets/d9f63d00-ee22-4de0-8316-d81a245d3a63)
 ### 1. Imports
 
 - **`cv2`**: OpenCV library for video capture and image processing.
@@ -62,7 +62,8 @@ You can add or modify the object classes for which you want to enable license pl
 
 - **`device`**: Determines if GPU (`cuda`) or CPU should be used for model inference.
 - **`model`**: Loads the YOLOv5 model from PyTorch Hub and moves it to the selected device.
-- **`reader`**: Initializes EasyOCR for English (`en`) to perform OCR on detected objects.
+- **`reader`**: Initializes EasyOCR for English (`en`) to perform OCR
+ on detected objects.
 
 ### 3. Loading Classes
 
