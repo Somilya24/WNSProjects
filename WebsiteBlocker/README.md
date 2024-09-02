@@ -33,6 +33,75 @@ Install the required Python libraries using pip:
    ```bash
    python WebsiteBlocker.py
 
+# Code Explanation
+
+## Imports
+
+- **os**: Provides a way of using operating system-dependent functionality. Used here to determine the path of the hosts file.
+- **re**: Regular expression operations for pattern matching.
+- **requests**: For making HTTP requests to fetch website content.
+- **BeautifulSoup**: For parsing HTML and extracting URLs from websites.
+
+## Constants
+
+- **HOSTS_PATH**: Determines the path of the hosts file based on the operating system:
+  - `/etc/hosts` for Unix-like systems (Linux, macOS).
+  - `C:\Windows\System32\drivers\etc\hosts` for Windows.
+- **REDIRECT_IP**: The IP address used to redirect blocked websites. It is set to `127.0.0.1` (localhost).
+
+## Functions
+
+### `block_websites(websites)`
+
+- **Purpose**: Adds entries to the hosts file to block specified websites.
+- **Parameters**: 
+  - `websites` (list): A list of website URLs to block.
+- **Operation**:
+  - Opens the hosts file in read and append mode.
+  - Checks if each website is already blocked; if not, adds a new entry to the hosts file.
+  - Writes `127.0.0.1 website` for each website to block.
+
+### `unblock_websites(websites)`
+
+- **Purpose**: Removes entries from the hosts file to unblock specified websites.
+- **Parameters**: 
+  - `websites` (list): A list of website URLs to unblock.
+- **Operation**:
+  - Opens the hosts file in read and write mode.
+  - Reads all lines and filters out the ones containing the websites to unblock.
+  - Writes back the filtered content and truncates the file to remove unwanted lines.
+
+### `scrape_websites(urls)`
+
+- **Purpose**: Scrapes URLs from the provided websites to extract all hyperlinks (`<a href>` tags).
+- **Parameters**: 
+  - `urls` (list): A list of website URLs to scrape.
+- **Operation**:
+  - Sends a GET request to each URL.
+  - Parses the HTML content using BeautifulSoup.
+  - Extracts and returns all hyperlinks that start with `http`.
+
+### `pattern_recognition(urls, pattern)`
+
+- **Purpose**: Identifies and filters websites based on a given regular expression pattern.
+- **Parameters**: 
+  - `urls` (list): A list of URLs to be checked.
+  - `pattern` (str): A regular expression pattern to match against the URLs.
+- **Operation**:
+  - Compiles the given pattern using the `re` module.
+  - Filters the list of URLs and returns only those that match the pattern.
+
+### `main()`
+
+- **Purpose**: The main function serves as the entry point for the script.
+- **Operation**:
+  - Prompts the user to choose an action: block or unblock websites.
+  - Takes a list of websites as input from the user.
+  - Calls the respective function (`block_websites` or `unblock_websites`) based on user input.
+  - Allows the user to input a regex pattern to match websites.
+  - If a pattern is provided, scrapes the provided websites and identifies URLs matching the pattern using `pattern_recognition`.
+
+
 ## Usage
 1. **Blocking or Unblocking Websites:**
 
